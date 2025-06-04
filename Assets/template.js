@@ -94,11 +94,7 @@ export const Detail_product = (product) => {
 
             <div class="detail_size_select_box">
 
-                <div class="detail_size_select_box_item">XS</div>
-                <div class="detail_size_select_box_item">S</div>
-                <div class="detail_size_select_box_item">M</div>
-                <div class="detail_size_select_box_item">L</div>
-                <div class="detail_size_select_box_item">XL</div>
+ 
             </div>
 
             <div class="detail_size_select mt-5">
@@ -108,18 +104,7 @@ export const Detail_product = (product) => {
 
 
             <div class="detail_color_available my-3">
-               <div class="detail_color_item">
-                  <span></span>
-               </div>
-               <div class="detail_color_item">
-                  <span></span>
-               </div>
-               <div class="detail_color_item">
-                  <span></span>
-               </div>
-               <div class="detail_color_item">
-                  <span></span>
-               </div>
+              
             </div>
 
             <div class="detail_btn_cart">
@@ -127,7 +112,7 @@ export const Detail_product = (product) => {
                   <img src="/Ressources/icones/shopping-cart.svg" alt="" srcset="">
                   <a href="/Pages/Cart.html">Add to cart</a>
                </button>
-               <button class="detail_btn_price">$63.00</button>
+               <button class="detail_btn_price">$${product.price}</button>
             </div>
 
             <div class="detail_paye py-3 mt-5">
@@ -216,7 +201,7 @@ export const Detail_product = (product) => {
                   </div>
 
                   <p class=my-5>
-                     100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide  all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.
+                    ${product.description}
                   </p>
 
 

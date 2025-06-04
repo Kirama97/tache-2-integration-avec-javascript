@@ -2676,7 +2676,7 @@ header .log_btn  button:nth-child(2):hover a {
    
 }
 
-.detail_size_select_box_item:nth-child(4) {
+.detail_size_select_box_item:last-child {
     background-color: black;
     color: white;
 }
@@ -2738,7 +2738,9 @@ header .log_btn  button:nth-child(2):hover a {
 .detail_btn_cart {
     display: flex;
     align-items: center;
-    gap: 30px;
+    justify-content: start;
+    /* background-color: #000; */
+    
 }
 
 
@@ -2785,6 +2787,7 @@ header .log_btn  button:nth-child(2):hover a {
     width:17%;
     background-color: white;
     font-weight: 600;
+    margin-left: 20px;
 }
 
 
@@ -5299,7 +5302,7 @@ header {
 .detail_btn_cart {
     display: flex;
     align-items: center;
-    gap: 30px;
+   
 }
 
 
@@ -7084,7 +7087,7 @@ header .log_btn  button{
 .detail_btn_cart {
     display: flex;
     align-items: center;
-    gap: 30px;
+  
 }
 
 
@@ -8843,7 +8846,7 @@ header .log_btn  button{
 .detail_btn_cart {
     display: flex;
     align-items: center;
-    gap: 30px;
+    
 }
 
 

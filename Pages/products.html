@@ -174,44 +174,7 @@
 
 
     
- <script type="module">
-
-
-import {categories , w_products} from "../data/data.js" ;
-import {categorie_item ,women_item,Detail_product} from "../Assets/template.js"
-
-  
-const params = new URLSearchParams(window.location.search);
-const productId = params.get("id");
-const detail_page = document.querySelector('.product_detail_page');
-
- 
-
-
-
-    function afficherDetail(id){
-      const product = w_products.find(a => a.id == id);
-      const main_detail = document.querySelector('.main_detail');
-      
-      
-
-      if (product) {
-   
-        main_detail.innerHTML = Detail_product(product);
-   
-  } else {
-    main_detail.innerHTML = "Aucun article trouvé";
-  }
-
-  }
-
-     if(productId){
-
-      afficherDetail(productId) ;
-     
-    }
-
-
+ <script src="/Assets/product.js" type="module">
 
 
  </script>

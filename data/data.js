@@ -1,6 +1,17 @@
 
 
-export const w_products = [
+const descriptions = [
+  "100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.",
+  "Crafted from premium fabric for unmatched comfort. Designed to last with durable stitching and vibrant colors that stay bright after every wash.",
+  "Soft-touch cotton with a breathable feel. Casual look, elegant fit. Wash-resistant prints and stretchable material for all-day wear.",
+  "Sustainable materials and eco-conscious dyes. Smooth and stylish finish. Comfortable enough for daily use and activewear.",
+  "Classic fit with a modern twist. Lightweight feel and resistant to shrinking. Feel good, look good — wherever you go.",
+  "Brushed interior for warmth. Great layering piece. Designed for movement, perfect for everyday lifestyle wear.",
+  "Minimalist design meets superior quality. Made for people who want both fashion and function. Premium stitching & smart fabric.",
+  "Smooth seams and pre-shrunk fabric. Perfect for sensitive skin. Ideal for travel, workouts or lounging at home."
+];
+
+export const w_products = [ 
   {
     id: 1,
     image: "/Ressources/images/cat_women_10.png",
@@ -8,7 +19,8 @@ export const w_products = [
     brand: "Jhanvi's Brand",
     price: 123.00,
     color: ["#3F4646", "#D72638", "#F46036", "#2E294E"],
-    size: ["S", "M", "L"]
+    size: ["S", "M", "L"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 2,
@@ -17,7 +29,8 @@ export const w_products = [
     brand: "Helen's",
     price: 11.00,
     color: ["#0081A7", "#00AFB9", "#FDFCDC", "#FED9B7"],
-    size: ["XS", "S", "M"]
+    size: ["XS", "S", "M"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 3,
@@ -26,7 +39,8 @@ export const w_products = [
     brand: "Nike's Brand",
     price: 119.00,
     color: ["#6A0572", "#AB83A1", "#D6B4C2", "#FFE3FE"],
-    size: ["M", "L", "XL"]
+    size: ["M", "L", "XL"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 4,
@@ -35,7 +49,8 @@ export const w_products = [
     brand: "Jhanvi's Brand",
     price: 123.00,
     color: ["#0F4C5C", "#FF784F", "#FFB677", "#FFF9EC"],
-    size: ["XS", "M", "XL"]
+    size: ["XS", "M", "XL"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 5,
@@ -44,7 +59,8 @@ export const w_products = [
     brand: "As's Brand",
     price: 37.00,
     color: ["#D90368", "#FF4E00", "#F2E94E", "#00CC99"],
-    size: ["S", "L", "XL"]
+    size: ["S", "L", "XL"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 6,
@@ -53,7 +69,8 @@ export const w_products = [
     brand: "MM's Brand",
     price: 37.00,
     color: ["#343A40", "#6C757D", "#ADB5BD", "#CED4DA"],
-    size: ["XS", "S", "L"]
+    size: ["XS", "S", "L"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 7,
@@ -62,7 +79,8 @@ export const w_products = [
     brand: "Nike's Brand",
     price: 119.00,
     color: ["#114B5F", "#028090", "#E4FDE1", "#456990"],
-    size: ["S", "M", "XL"]
+    size: ["S", "M", "XL"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 8,
@@ -71,7 +89,8 @@ export const w_products = [
     brand: "Nike's Brand",
     price: 119.00,
     color: ["#8D6A9F", "#CBB3BF", "#E8DFF5", "#FBEAFF"],
-    size: ["XS", "L"]
+    size: ["XS", "L"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 9,
@@ -80,7 +99,8 @@ export const w_products = [
     brand: "Nike's Brand",
     price: 119.00,
     color: ["#EF476F", "#FFD166", "#06D6A0", "#118AB2"],
-    size: ["M", "L", "XL"]
+    size: ["M", "L", "XL"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 10,
@@ -89,7 +109,8 @@ export const w_products = [
     brand: "Nike's Brand",
     price: 119.00,
     color: ["#264653", "#2A9D8F", "#E9C46A", "#F4A261"],
-    size: ["S", "M"]
+    size: ["S", "M"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 11,
@@ -98,7 +119,8 @@ export const w_products = [
     brand: "Nike's Brand",
     price: 119.00,
     color: ["#FFADAD", "#FFD6A5", "#FDFFB6", "#CAFFBF"],
-    size: ["XS", "S", "M", "L"]
+    size: ["XS", "S", "M", "L"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   },
   {
     id: 12,
@@ -107,10 +129,10 @@ export const w_products = [
     brand: "Nike's Brand",
     price: 119.00,
     color: ["#B5838D", "#6D6875", "#E5989B", "#FFB4A2"],
-    size: ["M", "L"]
+    size: ["M", "L"],
+    description: descriptions[Math.floor(Math.random() * descriptions.length)]
   }
 ];
-
 
 
 
