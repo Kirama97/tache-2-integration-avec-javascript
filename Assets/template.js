@@ -110,9 +110,9 @@ export const Detail_product = (product) => {
             <div class="detail_btn_cart">
                <button class="detail_btn_add">
                   <img src="/Ressources/icones/shopping-cart.svg" alt="" srcset="">
-                  <a href="/Pages/Cart.html">Add to cart</a>
+                  <p>Add to cart</p>
                </button>
-               <button class="detail_btn_price">$${product.price}</button>
+               <button class="detail_btn_price" >$${product.price}</button>
             </div>
 
             <div class="detail_paye py-3 mt-5">
