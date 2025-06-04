@@ -71,7 +71,7 @@ let w_products_data = w_products ;
 const list_women = document.querySelector(".cat_for_man");
 
 
-// localStorage.setItem("product", JSON.stringify(w_products));
+localStorage.setItem("product", JSON.stringify(w_products));
 
 
 
