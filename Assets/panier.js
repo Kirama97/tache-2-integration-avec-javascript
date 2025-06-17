@@ -5,6 +5,8 @@ const panierContainer = document.getElementById("cart_table_body");
 
 import { updateCartCount } from "./product.js";
 
+console.log(panier)
+
 export function AfficherLePanier() {
     panierContainer.innerHTML = "";
 
