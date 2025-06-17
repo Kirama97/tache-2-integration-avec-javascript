@@ -37,9 +37,13 @@
             <a href="/Pages/Sign_in.html" class="profil_icone">
                 <img src="/Ressources/icones/user.svg" alt="" srcset="">
             </a>
-            <a href="/Pages/Cart.html" class="profil_icone">
-                <img src="/Ressources/icones/panier.svg" alt="" srcset="">
-            </a >
+            <a href="/Pages/Cart.html" class="profil_icone position-relative">
+                  <img src="/Ressources/icones/panier.svg" alt="" srcset="">
+                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <p class="compter_panier">0</p>
+                        <span class="visually-hidden">unread messages</span>
+                     </span>
+               </a>
         </div>
 
         <img class="burguer" src="/Ressources/icones/burguer.svg" alt="" srcset="">
@@ -59,6 +63,8 @@
 
       <section class="container ">
             <div class=" py-2 py-md-4 ">
+                  <div id="toast" class="toast"></div>
+                  <div id="toast_error" class="toast_error"></div>
                
                   <div class="new_arrival_top py-2">
                      <span>.</span>
@@ -67,7 +73,7 @@
             
 
                   <div class=" my-2 my-md-5">
-
+    
                         <div class="row  filter_product">
 
                      
@@ -208,9 +214,7 @@
 
 
     
- <script src="/Assets/product.js" type="module">
-
-
- </script>
+ <script src="/Assets/product.js" type="module"></script>
+ <script src="/Assets/script.js" type="module"></script>
 </body>
 </html>

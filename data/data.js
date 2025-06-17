@@ -135,6 +135,91 @@ export const w_products = [
 ];
 
 
+export const m_products = [
+  {
+    id: 1,
+    image: "/Ressources/images/cat_for_man1.png",
+    title: "Shirt",
+    brand: "Urban Classic",
+    price: 45.00,
+    description: "100% Cotton – breathable and durable. Tailored fit with button-down collar. Ideal for formal or casual looks.",
+    color: ["#1F1F1F", "#FFFFFF", "#4B4B4B", "#808080"],
+    size: ["S", "M", "L", "XL"]
+  },
+  {
+    id: 2,
+    image: "/Ressources/images/cat_for_man2.png",
+    title: "Printed T-Shirt",
+    brand: "Street Style",
+    price: 29.00,
+    description: "Premium cotton with fade-proof HD print. Soft feel and casual cut. Great for daily wear.",
+    color: ["#000000", "#F5F5F5", "#FF5733", "#FFC300"],
+    size: ["M", "L", "XL"]
+  },
+  {
+    id: 3,
+    image: "/Ressources/images/cat_for_man3.png",
+    title: "Plain T-Shirt",
+    brand: "Essentials",
+    price: 19.00,
+    description: "Simple yet stylish. Ultra-soft cotton. Perfect base layer or solo top for minimal looks.",
+    color: ["#E0E0E0", "#333333", "#A9A9A9"],
+    size: ["S", "M", "L"]
+  },
+  {
+    id: 4,
+    image: "/Ressources/images/cat_for_man4.png",
+    title: "Polo T-Shirt",
+    brand: "Golfwear",
+    price: 39.00,
+    description: "Ribbed collar and short sleeves. Soft pique fabric with moisture-wicking. Versatile smart casual look.",
+    color: ["#2E86AB", "#D4E157", "#6D4C41", "#F8BBD0"],
+    size: ["M", "L", "XL", "XXL"]
+  },
+  {
+    id: 5,
+    image: "/Ressources/images/cat_for_man5.png",
+    title: "Hoodies & Sweatshirt",
+    brand: "Nike's Brand",
+    price: 59.00,
+    description: "Cozy fleece inside with a relaxed fit. Drawstring hood and front pocket. Keeps you warm in style.",
+    color: ["#1E1E2F", "#3C3C3C", "#FF7043"],
+    size: ["S", "M", "L", "XL"]
+  },
+  {
+    id: 6,
+    image: "/Ressources/images/cat_for_man6.png",
+    title: "Jeans",
+    brand: "Denim Co.",
+    price: 69.00,
+    description: "Stretchy fit with faded wash. 5-pocket classic with zip fly. Durable for everyday adventures.",
+    color: ["#1B263B", "#415A77", "#778DA9"],
+    size: ["28", "30", "32", "34", "36"]
+  },
+  {
+    id: 7,
+    image: "/Ressources/images/cat_for_man7.png",
+    title: "Activewear",
+    brand: "Adidas",
+    price: 49.00,
+    description: "Sweat-wicking fabric. Designed for mobility and performance. Perfect for workouts or streetwear.",
+    color: ["#000000", "#00796B", "#80CBC4", "#FFFFFF"],
+    size: ["S", "M", "L"]
+  },
+  {
+    id: 8,
+    image: "/Ressources/images/cat_for_man8.png",
+    title: "Boxers",
+    brand: "ComfortWear",
+    price: 25.00,
+    description: "Soft cotton stretch. Tag-free with supportive pouch. All-day comfort for every man.",
+    color: ["#E53935", "#8E24AA", "#3949AB", "#43A047"],
+    size: ["S", "M", "L", "XL"]
+  }
+];
+
+
+
 
 
 

@@ -26,6 +26,7 @@ const detail_page = document.querySelector('.product_detail_page');
                     // console.log(taille)
                     const div = document.createElement("div");
                     div.className = "detail_size_select_box_item";
+                    div.setAttribute("data-size", taille);
                     div.textContent = taille;
                     detail_size_select_box.appendChild(div)
                 } )
@@ -44,9 +45,9 @@ const detail_page = document.querySelector('.product_detail_page');
                     const div = document.createElement("div");
                     div.className = "detail_color_item";
                     const span = document.createElement("span");
+                    div.setAttribute("data-color", color);
                     span.style.backgroundColor = color ;
                     div.appendChild(span)
-                   
                     detail_color_available.appendChild(div)
                 } )
             
@@ -87,49 +88,88 @@ const detail_page = document.querySelector('.product_detail_page');
         filtrer_produit(w_product_filtrer)  ;
 
 
+
+
         // creation du panier 
 
 
-        let panier = [];
-
-        console.log(panier);
-
-                
+            
+        let panier = JSON.parse(localStorage.getItem("panier")) || [];
 
         // ---------------ajouter panier --------------
+        
+        const ajouterPanier = (product) => {
+            const Ajouter_au_panier = document.querySelector(".detail_btn_add");
 
+            let selectedSize = null;
+            let selectedColor = null;
 
-        const detail_btn_add = document.querySelector(".detail_btn_add");
+            // taille
+            document.querySelectorAll('.detail_size_select_box_item').forEach(item => {
+                item.addEventListener('click', function() {
+                    selectedSize = item.dataset.size;
+                    document.querySelectorAll('.detail_size_select_box_item').forEach(i => i.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
 
-        detail_btn_add.addEventListener('click' , () => {
+            // couleur
+            document.querySelectorAll('.detail_color_item').forEach(item => {
+                item.addEventListener('click', function() {
+                    selectedColor = this.dataset.color;
+                    document.querySelectorAll('.detail_color_item').forEach(i => i.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
 
-            window.location.href = `/pages/Cart.html`
-            // console.log('ok')
+            Ajouter_au_panier.addEventListener('click', () => {
+                if (selectedColor && selectedSize) {
+                    // Chercher si le produit existe déjà (même id, taille, couleur)
+                    const index = panier.findIndex(item =>
+                        item.id === product.id &&
+                        item.size === selectedSize &&
+                        item.color === selectedColor
+                    );
 
-            panier.push(product);
+                 
 
-            console.log(panier);
+                    if (index !== -1) {
+                      
+                        panier[index].quantity += 1;
+                    } else {
+                      
+                        const productAajouter = {
+                            id: product.id,
+                            title: product.title,
+                            price: product.price,
+                            size: selectedSize,
+                            color: selectedColor,
+                            image: product.image,
+                            quantity: 1,
+                        };
+                        panier.push(productAajouter);
+                    }
 
+                    localStorage.setItem("panier", JSON.stringify(panier));
+                    showToast("Produit ajouté au panier !");
+                   
+                    updateCartCount()
+                    Ajouter_au_panier.setAttribute("disabled", "true");
+                    Ajouter_au_panier.style.backgroundColor = "#ccc"; 
+                    Ajouter_au_panier.textContent = "Déja au panier"; 
+                } else {
+                    showToast_error("Veuillez sélectionner une taille et une couleur.");
+                }
+            });
 
             
+   
 
-        })
+          
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        ajouterPanier(product);
+          console.log(panier); 
    
     } else {
         main_detail.innerHTML = "Aucun article trouvé";
@@ -137,19 +177,53 @@ const detail_page = document.querySelector('.product_detail_page');
 
   }
 
+
+
+
+
+// --
+
+
      if(productId){
 
       afficherDetail(productId) ;
      
     }
 
+        //   compteur du panier 
 
 
-    // afficher les tailles 
+   export   function updateCartCount() {
+            const panier = JSON.parse(localStorage.getItem("panier")) || [];
+            // Compte le nombre de produits différents (longueur du tableau)
+            const totalCount = panier.length;
+            const compteur = document.querySelector('.compter_panier');
+            if (compteur) {
+                compteur.textContent = totalCount;
+            }
+    }
+
+     updateCartCount()
+
+    //  mesage alert toast 
 
 
-
-
+        function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.className = 'toast show';
+        setTimeout(() => {
+            toast.className = 'toast';
+        }, 3000); 
+    }
+        function showToast_error(message) {
+        const toast = document.getElementById('toast_error');
+        toast.textContent = message;
+        toast.className = 'toast_error show';
+        setTimeout(() => {
+            toast.className = 'toast_error';
+        }, 2000); 
+    }
 
 
 

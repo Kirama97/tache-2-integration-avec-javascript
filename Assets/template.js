@@ -108,7 +108,7 @@ export const Detail_product = (product) => {
             </div>
 
             <div class="detail_btn_cart">
-               <button class="detail_btn_add">
+               <button class="detail_btn_add" >
                   <img src="/Ressources/icones/shopping-cart.svg" alt="" srcset="">
                   <p>Add to cart</p>
                </button>
