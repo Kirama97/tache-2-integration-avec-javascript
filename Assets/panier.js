@@ -12,7 +12,7 @@ export function AfficherLePanier() {
         panier.forEach((produit, index) => {
             const produitElement = document.createElement("tr");
             produitElement.innerHTML = `
-                <td class="d-flex align-items-center produit_au_panier" onclick="window.location.href='/pages/products.html?id=${produit.id}'">
+                <td class="d-flex align-items-center produit_au_panier" onclick="window.location.href='/products.html?id=${produit.id}'">
                     <img src="${produit.image}" class="product-img me-3">
                     <div class="text-start">
                         <strong >${produit.title}</strong>
@@ -98,18 +98,22 @@ panierContainer.addEventListener("click", function(e) {
 
 // la somme total dans le panier
 
- function totalPrice(){
+ export function totalPrice(){
     const livraison = 55
     const totalElement = document.querySelector(".total_price");
+    const total_resume_commande = document.querySelector(".total_resume_commande");
+    const subtotal_resume_commande = document.querySelector(".subTotal_resume_commande");
     const sousTotal = document.querySelector(".sous_total");
 
     const total = panier.reduce((acc, produit) => acc + (produit.price * produit.quantity), 0);
     totalElement.textContent = ` ${(total + livraison).toFixed(2)}€`;
     sousTotal.textContent = ` ${total.toFixed(2)}€`;
+
+   
 }
    
 
-totalPrice();
+totalPrice(); // Mettre à jour le prix total
       
 
 

@@ -76,7 +76,7 @@ const detail_page = document.querySelector('.product_detail_page');
                     
                     cat_for_man_item.addEventListener('click' , () => {
 
-                    window.location.href= `/pages/products.html?id=${product.id}`
+                    window.location.href= `/products.html?id=${product.id}`
 
                     } )
 

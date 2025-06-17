@@ -90,7 +90,7 @@ const afficherWomenProduct = () => {
        
      cat_for_man_item.addEventListener('click' , () => {
 
-       window.location.href= `/pages/products.html?id=${w_product.id}`
+       window.location.href= `/products.html?id=${w_product.id}`
 
      } )
 
