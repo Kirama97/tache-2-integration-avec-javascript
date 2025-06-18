@@ -4,7 +4,9 @@
     const resumerCommande = document.getElementById("resumer_commande");
     resumerCommande.innerHTML = ""; // Vider le résumé avant d'ajouter
 
-    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    const email = localStorage.getItem('utilisateurConnecte');
+    let panier = JSON.parse(localStorage.getItem(`panier_${email}`)) || [];
+
 
     panier.forEach(produit => {
         const li_resumerCommande  = document.createElement("li");

@@ -46,6 +46,11 @@
                      <span class="visually-hidden">unread messages</span>
                   </span>
             </a>
+            
+            <a  id="deconnexion" class="profil_icone ">
+               <img src="/Ressources/icones/log-out.svg" alt="" srcset="">
+            </a>
+
         </div>
 
         <img class="burguer" src="/Ressources/icones/burguer.svg" alt="" srcset="">
@@ -110,7 +115,6 @@
     
         </div>
 
-
         <!-- section 1 -->
 
         <section >
@@ -142,7 +146,6 @@
 
            </div>
         </section>
-
 
         <!-- section 2 -->
 
@@ -219,9 +222,6 @@
 
          <!-- section 3  -->
 
-
-
-         
         <section >
             <div class="container py-3 py-md-5 ">
                
@@ -345,7 +345,6 @@
          </section>
 
          <!-- section 5 cat men  -->
-
 
          <section >
           <div class="container py-5 py-md-5 ">
@@ -477,7 +476,6 @@
 
          <!-- section 6 cat women  -->
 
-
          <section >
           <div class="container py-2 py-md-4 ">
              
@@ -586,11 +584,8 @@
        </section>
 
 
-
        <!-- section 8 in the limelight -->
 
-
-       
        <section >
         <div class="container py-2 py-md-4 ">
            
@@ -599,7 +594,6 @@
                 <h1>In The Limelight</h1>
             </div>
         
-
             <div class=" my-2 my-md-5">
 
                  <div class="row  filter_product">
@@ -727,11 +721,8 @@
       </div>
    </section>
 
-
-
-
-
-
+         <div id="toast" class="toast"></div>
+         <div id="toast_error" class="toast_error"></div>
     </main>
 
 
@@ -861,7 +852,8 @@
 
 
     
- <script src="/Assets/script.js" type="module"></script>
+ <script src="/Assets/script.js"  type="module"></script>
+ <script src="/Assets/deconnexion.js"  type="module"></script>
   <script src="/Assets/product.js" type="module"></script>
  <script  type="module">
 
@@ -901,7 +893,6 @@
                 }
 
         filtrer_produit(w_product_filtrer)  ;
-
 
 
  </script>

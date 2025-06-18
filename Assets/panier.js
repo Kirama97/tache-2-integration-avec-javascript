@@ -1,8 +1,8 @@
 
 
-const panier = JSON.parse(localStorage.getItem("panier")) || [];
+const email = localStorage.getItem('utilisateurConnecte');
+let panier = JSON.parse(localStorage.getItem(`panier_${email}`)) || [];
 const panierContainer = document.getElementById("cart_table_body");
-
 import { updateCartCount } from "./product.js";
 
 console.log(panier)
@@ -61,7 +61,7 @@ panierContainer.addEventListener("click", function(e) {
     if (e.target.classList.contains("plus-produit")) {
         const index = e.target.getAttribute("data-index");
         panier[index].quantity += 1;
-        localStorage.setItem("panier", JSON.stringify(panier));
+        localStorage.setItem(`panier_${email}`, JSON.stringify(panier));
         AfficherLePanier(panier);
         totalPrice()
         updateCartCount(panier.length); // Mettre à jour le compteur du panier
@@ -70,7 +70,7 @@ panierContainer.addEventListener("click", function(e) {
         const index = e.target.getAttribute("data-index");
         if (panier[index].quantity > 1) {
             panier[index].quantity -= 1;
-            localStorage.setItem("panier", JSON.stringify(panier));
+            localStorage.setItem(`panier_${email}`, JSON.stringify(panier));
             AfficherLePanier(panier);
             totalPrice()
             updateCartCount(panier.length); // Mettre à jour le compteur du panier
@@ -82,7 +82,7 @@ panierContainer.addEventListener("click", function(e) {
         // Demander confirmation à l'utilisateur
         if (confirm("Voulez-vous vraiment supprimer ce produit du panier ?")) {
             panier.splice(index, 1);
-            localStorage.setItem("panier", JSON.stringify(panier));
+            localStorage.setItem(`panier_${email}`, JSON.stringify(panier));
             AfficherLePanier(panier);
             totalPrice()
             updateCartCount(panier.length); // Mettre à jour le compteur du panier

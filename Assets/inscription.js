@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
      
 
       setTimeout(() => {
-         window.location.href = "/index.html";
+         window.location.href = "/Pages/Sign_in.html";
       }, 2000);
     });
   }

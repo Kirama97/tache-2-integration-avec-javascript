@@ -1,3 +1,4 @@
+
 let currentSlide = 0;
 const totalCards = 12;
 const visibleCards = 4;
@@ -28,11 +29,7 @@ burguer.addEventListener('click', () => {
   navigation.classList.toggle('active');
   profil.classList.toggle('active');
 
-  
-
-
 });
-
 
 // burguuer left
 
@@ -101,21 +98,6 @@ const afficherWomenProduct = () => {
 afficherWomenProduct(w_products_data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // -----------------afficher les categorie----------------------
 
 
@@ -137,3 +119,4 @@ const afficherCategorie = () => {
 }
 
 afficherCategorie(categories_data);
+
