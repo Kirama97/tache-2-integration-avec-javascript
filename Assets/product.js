@@ -208,21 +208,23 @@ const detail_page = document.querySelector('.product_detail_page');
     //  mesage alert toast 
 
 
-        function showToast(message) {
+     export   function showToast_error(message) {
+        const toast = document.getElementById('toast_error');
+        toast.textContent = message;
+        toast.className = 'toast_error show';
+        setTimeout(() => {
+            toast.className = 'toast_error';
+        }, 2500); 
+    }
+
+    
+   export     function showToast(message) {
         const toast = document.getElementById('toast');
         toast.textContent = message;
         toast.className = 'toast show';
         setTimeout(() => {
             toast.className = 'toast';
         }, 3000); 
-    }
-        function showToast_error(message) {
-        const toast = document.getElementById('toast_error');
-        toast.textContent = message;
-        toast.className = 'toast_error show';
-        setTimeout(() => {
-            toast.className = 'toast_error';
-        }, 2000); 
     }
 
 

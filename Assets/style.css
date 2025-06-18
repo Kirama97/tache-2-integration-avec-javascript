@@ -2819,48 +2819,53 @@ header .log_btn  button:nth-child(2):hover a {
 .toast {
   visibility: hidden;
   min-width: 100px;
- background-color: rgb(14, 158, 14);
+  background-color: rgb(14, 158, 14);
   color: #fff;
   text-align: center;
   border-radius: 10px;
-  padding: 12px;
-  /* width: 100px; */
+  padding: 10px;
   position: fixed;
   z-index: 9999;
-  right: 15px;
-  top: 10%;
-  /* transform: translateX(-50%); */
-  font-size: 14px;
+  right: 40%;
+  bottom:-3%;
+  font-size: 13px;
   opacity: 0;
-  transition: opacity 0.5s, visibility 0.5s;
+  transition: opacity 0.9s, visibility 0.9s ,bottom 0.6s;
+  
+  
 }
 
-.toast_error {
+
+
+.toast_error 
+ {
   visibility: hidden;
   min-width: 100px;
-    background-color: #e74c3c; /* Red background for error */
+  background-color: #e74c3c; /* Red background for error */
   color: #fff;
   text-align: center;
   border-radius: 10px;
-  padding: 12px;
+  padding: 10px;
   /* width: 100px; */
   position: fixed;
   z-index: 9999;
-  right: 15px;
-  top: 10%;
+  right: 40%;
+  bottom:-3%;
   /* transform: translateX(-50%); */
-  font-size: 14px;
+  font-size: 13px;
   opacity: 0;
-  transition: opacity 0.5s, visibility 0.5s;
+  transition: opacity 0.9s, visibility 0.9s ,bottom 0.6s;
+  
 }
-.toast.show {
+
+.toast.show 
+, .toast_error.show{
   visibility: visible;
   opacity: 1;
+   bottom: 3%;
+  
 }
-.toast_error.show {
-  visibility: visible;
-  opacity: 1;
-}
+
 
 
 .detail_paye {

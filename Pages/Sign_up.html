@@ -47,7 +47,11 @@
 
     <main>
 
+
       <section class="hero_sign">
+
+         <div id="toast" class="toast"></div>
+         <div id="toast_error" class="toast_error"></div>
 
          <div class="hero_sign_left"></div>
          <div class="hero_sign_right">
@@ -72,14 +76,19 @@
             </div>
 
             <form action="" class="hero_sign_form">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label ">Email adress</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <div class="mb-3">
+                    <label for="nomComplet" class="form-label ">Nom Complet</label>
+                    <input type="text" class="form-control" name="nomComplet" id="nomComplet" aria-describedby="nomComplet" >
                 
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" required>
+                    <label for="email" class="form-label ">Email adress</label>
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" >
+                
+                  </div>
+                  <div class="mb-3">
+                    <label for="pasword" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" >
                   </div>
 
                   <div class="mb-3 hero_user_indice ">
@@ -88,14 +97,14 @@
 
 
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" required >
-                    <label class="form-check-label" for="disabledFieldsetCheck">
+                    <input class="form-check-input" type="checkbox" id="contrat" required >
+                    <label class="form-check-label" for="contrat" >
                         Agree to our Terms of use and Privacy Policy 
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" required >
-                    <label class="form-check-label" for="disabledFieldsetCheck">
+                    <input class="form-check-input" type="checkbox" id="abonnement" required >
+                    <label class="form-check-label" for="abonnement">
                         Subscribe to our monthly newsletter
                     </label>
                   </div>
@@ -118,6 +127,7 @@
     </main>
 
     
- <script src="/Assets/script.js"></script>
+ <script src="/Assets/script.js" type="module"></script>
+ <script src="/Assets/inscription.js" type="module"></script>
 </body>
 </html>

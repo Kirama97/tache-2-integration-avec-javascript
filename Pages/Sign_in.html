@@ -47,6 +47,8 @@
     <main>
 
       <section class="hero_sign">
+         <div id="toast" class="toast"></div>
+         <div id="toast_error" class="toast_error"></div>
 
          <div class="hero_sign_left"></div>
          <div class="hero_sign_right">
@@ -73,12 +75,12 @@
             <form action="" class="hero_sign_form">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label ">User name or email adress</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
                 
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" required>
+                    <input type="password" class="form-control" id="password">
                   </div>
                   <div class="mb-3 hero_passwor_forget ">
                     <a href="/Pages/Reset_password.html" >Forget your password</a>
@@ -98,6 +100,7 @@
     </main>
 
     
- <script src="/Assets/script.js"></script>
+ <script src="/Assets/script.js" type="module" ></script>
+ <script src="/Assets/connexion.js" type="module"></script>
 </body>
 </html>
