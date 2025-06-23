@@ -76,9 +76,15 @@
             </div>
 
             <form action="" class="hero_sign_form">
-                  <div class="mb-3">
-                    <label for="nomComplet" class="form-label ">Nom Complet</label>
-                    <input type="text" class="form-control" name="nomComplet" id="nomComplet" aria-describedby="nomComplet" >
+                  <div class="mb-3 row">
+                     <div class="col-6">
+                        <label for="prenom" class="form-label ">Prenom</label>
+                       <input type="text" class="form-control" name="prenom" id="prenom" aria-describedby="prenom" >
+                     </div>
+                     <div class="col-6">
+                       <label for="nom" class="form-label ">Nom </label>
+                       <input type="text" class="form-control" name="nom" id="nom" aria-describedby="nom" >
+                     </div>
                 
                   </div>
                   <div class="mb-3">
@@ -103,7 +109,7 @@
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="abonnement" required >
+                    <input class="form-check-input" type="checkbox" id="abonnement" >
                     <label class="form-check-label" for="abonnement">
                         Subscribe to our monthly newsletter
                     </label>

@@ -16,14 +16,14 @@ deconnexion.addEventListener('click', () => {
         showToast_error("Vous n'êtes pas connecté , je vous redirige vers la page de connexion");
         setTimeout(() => {
            window.location.href = "/Pages/Sign_in.html";
-        }, 3000);
+        }, 2200);
         return;
     }
       showToast("Déconnexion réussie !", "success");
     localStorage.removeItem('utilisateurConnecte');
     setTimeout(() => {
       window.location.href = "/Pages/Sign_in.html";   
-    }, 3000);
+    }, 2200);
 });
 
    

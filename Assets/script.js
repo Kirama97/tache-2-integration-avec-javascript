@@ -36,11 +36,15 @@ burguer.addEventListener('click', () => {
 const page_filtre = document.querySelector('.filtre');
 const bloc_burguer_left = document.querySelector('.bloc_burguer_left');
 
-bloc_burguer_left.addEventListener('click', () => {
+ if(bloc_burguer_left) {
 
-   page_filtre.classList.toggle('active');
-   bloc_burguer_left.classList.toggle('active');
-})
+    bloc_burguer_left.addEventListener('click', () => {
+  
+        page_filtre.classList.toggle('active');
+        bloc_burguer_left.classList.toggle('active');
+  
+    });
+ }
 
 
 
@@ -78,7 +82,7 @@ const afficherWomenProduct = () => {
    w_products_data.forEach((w_product) =>{
     
      
-     console.log(w_product);
+    //  console.log(w_product);
      const cat_for_man_item = document.createElement("div");
      cat_for_man_item.setAttribute("data-id",w_product.id );
      cat_for_man_item.classList = "cat_for_man_item col-6 col-md-4";
@@ -112,11 +116,34 @@ const afficherCategorie = () => {
       //  console.log(categorie)
        const li_categorie = document.createElement("li");
        li_categorie.innerHTML = categorie_item(categorie);
-       list_categorie.appendChild(li_categorie);
+
+       if(list_categorie) {
+           list_categorie.appendChild(li_categorie);
+       }
+      
 
    } )
 
 }
 
 afficherCategorie(categories_data);
+
+
+// si l'utilisateur est connection le rediriger vers la page de son compte sinon sur sign_in
+
+const compte = document.getElementById("compte");
+
+if(compte){
+    compte.addEventListener('click' , () => {
+        const utilisateurConecter = localStorage.getItem('utilisateurConnecte');
+
+        if(utilisateurConecter){
+            window.location.href = "/Pages/Contact_detail.html";
+        } else {
+            window.location.href = "/Pages/Sign_in.html";
+        }
+
+      
+    });
+}
 

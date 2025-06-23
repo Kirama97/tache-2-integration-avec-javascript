@@ -34,7 +34,7 @@
             <a href="" class="profil_icone">
                 <img src="/Ressources/icones/heart.svg" alt="" srcset="">
             </a href="">
-            <a href="/Pages/Sign_in.html" class="profil_icone">
+            <a class="profil_icone"  id="compte">
                 <img src="/Ressources/icones/user.svg" alt="" srcset="">
             </a>
              <a href="/Pages/Cart.html" class="profil_icone position-relative">
@@ -96,41 +96,41 @@
                         <form>
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label class="form-label">First Name*</label>
-                                <input type="text" class="form-control" placeholder="First Name">
+                                <label class="form-label">Prenom</label>
+                                <input type="text" class="form-control" name="prenom" placeholder="prenom" disabled>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label">Last Name*</label>
-                                <input type="text" class="form-control" placeholder="Last Name">
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Country / Region*</label>
-                                <input type="text" class="form-control" placeholder="Country / Region">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Company Name</label>
-                                <input type="text" class="form-control" placeholder="Company (optional)">
+                                <label class="form-label">Nom</label>
+                                <input type="text" class="form-control" name="nom" placeholder="nom" disabled>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <label class="form-label">Street Address*</label>
-                                <input type="text" class="form-control" placeholder="House number and street name">
+                                <label class="form-label">Pays / Region*</label>
+                                <input type="text" class="form-control" name="pays" placeholder="Pays / Region">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Entreprise</label>
+                                <input type="text" class="form-control" name="entreprise" placeholder="Entreprise (optional)">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Quartier*</label>
+                                <input type="text" class="form-control" name="quartier" placeholder="Quartier / Numero Villa">
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label">Apt, suite, unit</label>
-                                <input type="text" class="form-control" placeholder="Apartment, suite, etc. (optional)">
+                                <input type="text" class="form-control" name="appartement" placeholder="Apartment, suite, etc. (optional)">
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-4">
-                                <label class="form-label">City*</label>
-                                <input type="text" class="form-control" placeholder="Town / City">
+                                <label class="form-label">Ville*</label>
+                                <input type="text" class="form-control" name="ville" placeholder="Ville">
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label">State*</label>
@@ -142,19 +142,20 @@
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label">Postal Code*</label>
-                                <input type="text" class="form-control" placeholder="Postal Code">
+                                <input type="text" class="form-control" name="codePostal" placeholder="Postal Code">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Phone*</label>
-                                <input type="text" class="form-control" placeholder="Phone">
+                                <input type="number" class="form-control" name="telephone" placeholder="(77/78/76/75/70) + xxx xx xx">
                         </div>
                         </div>
 
 
-                        <a href="/Pages/Contact_detail.html" id="continue_delivery" type="submit" class="btn btn-primary px-4 mb-3">Continue to delivery</a>
+                        <!-- <a href="/Pages/Contact_detail.html" id="continue_delivery" type="submit" class="btn btn-primary px-4 mb-3">Continue to delivery</a> -->
+                        <a  id="continue_delivery" type="submit" class="btn btn-primary px-4 mb-3">Continue to delivery</a>
                         
                         <div class="mb-3 form-check ">
                                 <input type="checkbox" class="form-check-input" id="saveInfo">
@@ -167,7 +168,7 @@
                                 
                                 <!-- Shipping Address -->
                                  <div class="shipping_top">
-                                     <h5>Shipping Address</h5>
+                                     <h5>Adresse de Livraison</h5>
                                      <p class="text-muted">Select the address that matches your card or payment method.</p>
 
                                  </div>
@@ -194,7 +195,7 @@
 
                                 <div class="shipping_top">
 
-                                     <h5>Shipping Method</h5>
+                                     <h5>Methode De livraison</h5>
                                 </div>
 
                           
@@ -202,7 +203,7 @@
                                     <p class="mb-1 fw-semibold">Arrives by Monday, June 7</p>
                                     <div class="d-flex justify-content-between pt-3">
                                         <span>Delivery Charges</span>
-                                        <span class="fw-semibold">$5.00</span>
+                                        <span class="fw-semibold">$55.00</span>
                                     </div>
                                     <small class="text-muted ">Additional fees may apply</small>
                                 </div>
@@ -223,7 +224,7 @@
                                 <div class="shipping_methode  mb-4">
                                 <!-- Credit Card -->
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" >
                                     <label class="form-check-label fw-semibold" for="creditCard">
                                     Credit Card
                                     </label>
@@ -348,6 +349,8 @@
         
     </section>
 
+     <div id="toast" class="toast"></div>
+     <div id="toast_error" class="toast_error"></div>
 
 
 
@@ -485,6 +488,6 @@
  <script src="/Assets/script.js" type="module"></script>
  <script src="/Assets/panier.js" type="module"></script>
  <script src="/Assets/checkout.js" type="module"></script>
- <script src="/Assets/deconnnexion.js" type="module"></script>
+ <script src="/Assets/deconnexion.js" type="module"></script>
 </body>
 </html>
