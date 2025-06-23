@@ -37,9 +37,13 @@
             <a  class="profil_icone" id="cart_icone_link" id="compte">
                 <img src="/Ressources/icones/user-white.svg" alt="" srcset="">
             </a>
-            <a href="/Pages/Cart.html" class="profil_icone" >
+             <a href="/Pages/Cart.html" class="profil_icone position-relative">
                 <img src="/Ressources/icones/panier.svg" alt="" srcset="">
-            </a href="">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                     <p class="compter_panier">0</p>
+                     <span class="visually-hidden">unread messages</span>
+                  </span>
+            </a>
         </div>
 
         <img class="burguer" src="/Ressources/icones/burguer.svg" alt="" srcset="">
@@ -50,6 +54,8 @@
  <main>
 
     <section class="contact_detail_section">
+           <div id="toast" class="toast"></div>
+           <div id="toast_error" class="toast_error"></div>
 
         <div class="contact_detail_contenu">
 
@@ -132,13 +138,22 @@
 
 
                                     <div class="contact_detail_contenu_right_box1">
-                                        <ul>
+                                        <ul id="compte_detail">
                                             <li>
-                                                <P>Your Name</P>
+                                                <P>Prenom</P>
                                                 <div class="change">
 
-                                                    <input type="text" value="Jhanvi Shah" >
-                                                    <a href="">Change</a>
+                                                    <input type="text" value="" name="prenom">
+                                                    <button  class="change_btn">Change</button>
+
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <P>Nom</P>
+                                                <div class="change">
+
+                                                    <input type="text" value="" name="nom">
+                                                    <button  class="change_btn">Change</button>
 
                                                 </div>
                                             </li>
@@ -146,26 +161,26 @@
                                                 <P>Email Address</P>
                                                 <div class="change">
 
-                                                    <input type="text" value="Jhanvi@gmail.com.com" name="" id="">
-                                                    <a href="">Change</a>
+                                                    <input type="text" value="" name="email" id="">
+                                                    <button  class="change_btn">Change</button>
 
                                                 </div>
                                             </li>
                                             <li>
-                                                <P>Phone Number</P>
+                                                <P>Telephone</P>
                                                 <div class="change">
 
-                                                     <input type="text" value="8980252445">
-                                                    <a href="">Change</a>
+                                                     <input type="number" name="telephone">
+                                                    <button class="change_btn">Change</button>
 
                                                 </div>
                                             </li>
-                                            <li>
-                                                <P>Password</P>
+                                           <li>
+                                                <P>Mots de passe</P>
                                                 <div class="change">
 
-                                                    <input type="password" value="12345667">
-                                                    <a href="">Change</a>
+                                                    <input type="password"  name="password">
+                                                    <button class="change_btn">Change</button>
 
                                                 </div>
                                             </li>
@@ -410,6 +425,7 @@
     
 <script src="/Assets/script.js" type="module"></script>
 <script src="/Assets/deconnexion.js" type="module"></script>
+<script src="/Assets/compte.js" type="module"></script>
 
 </body>
 </html>

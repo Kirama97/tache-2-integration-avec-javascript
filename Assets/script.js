@@ -87,14 +87,20 @@ const afficherWomenProduct = () => {
      cat_for_man_item.setAttribute("data-id",w_product.id );
      cat_for_man_item.classList = "cat_for_man_item col-6 col-md-4";
      cat_for_man_item.innerHTML = women_item(w_product);
-     list_women.appendChild(cat_for_man_item);
+
+     if (list_women) {
+
+       list_women.appendChild(cat_for_man_item);
        
-     cat_for_man_item.addEventListener('click' , () => {
+       cat_for_man_item.addEventListener('click' , () => {
 
        window.location.href= `/products.html?id=${w_product.id}`
 
      } )
 
+      
+     }
+    
    })
 
 }

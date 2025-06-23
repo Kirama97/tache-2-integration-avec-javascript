@@ -3863,18 +3863,34 @@ list-style: none;
     justify-content: space-between;
     
 }
-.contact_detail_contenu_right_box1 ul  li .change a{
+.contact_detail_contenu_right_box1 ul  li .change button{
   
  color: var(--bg-footer);
  transition: 0.2s ease-in;
+ border-radius: 5px;
+ border: none;
+ font-size: 14px;
+ transition: 0.2s ease;
+ padding: 5px 10px;
     
 
 
 }
 
-.contact_detail_contenu_right_box1 ul  li .change a:hover {
-    color: black;
+.contact_detail_contenu_right_box1 ul  li .change button:hover {
+    color: var(--color-primaire);
+    background-color: var(--color-primaire);
+    color: white;
 }
+.contact_detail_contenu_right_box1 ul  li .change button:focus {
+    transform: scale(0.9);
+    background-color: #28a745;
+    color: white;
+   
+
+}
+
+
 
 
 /* right box 2 */
