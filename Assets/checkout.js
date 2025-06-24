@@ -83,10 +83,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
 
-               if (!/^7[05678]\d{7}$/.test(infos.telephone)) {
-                    alert("Veuillez entrer un numéro de téléphone valide (9 chiffres).");
-                    return;
-                }
+               if (!/^\+2217[05678]\d{7}$/.test(infos.telephone)) {
+                alert("Veuillez entrer un numéro de téléphone valide au format +2217XXXXXXXX (12 caractères).");
+                showToast_error
+                 return;
+}
 
 
             // la methode de paiement choisie

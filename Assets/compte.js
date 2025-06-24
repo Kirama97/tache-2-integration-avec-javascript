@@ -30,7 +30,7 @@ function emailValide(email) {
 }
 
 function verifierTelephone(telephone) {
-    if (!/^7[05678]\d{7}$/.test(telephone)) {
+    if (!/^\+2217[05678]\d{7}$/.test(telephone)) {
         showToast_error("Veuillez entrer un numéro de téléphone valide (9 chiffres).");
         return false;
     }
