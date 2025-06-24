@@ -70,6 +70,9 @@ change_btn.forEach((btn) => {
             showToast('Données mises à jour');
         } else {
             showToast_error("Utilisateur introuvable.");
+            setTimeout(() => {
+                window.location.href="/Pages/sign_in.html";
+            }, 1500);
         }
     });
 });
