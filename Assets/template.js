@@ -335,12 +335,12 @@ export const commande_item = (commande ,dateFormater,dateLivraisonEstimee) => {
                                                         <img src=${commande.produits[0].image} class="order-img" alt="product">
                                                         <div class="order-text">
                                                         <div><strong>${commande.produits[0].title}</strong></div>
-                                                        <div><small> <span class="d-flex align-items-center">Color: <span class="color_item_resume_commande " style="background:${commande.produits[0].color};"></span></span></small></div>
+                                                        <div><small> <span class="d-flex align-items-center">Color: <span class="color_item_resume_commande " style="background:${commande.produits[0].color};"></span></small></div>
                                                         <div><small>Qty: ${commande.produits[0].quantity}</small></div>
                                                         <div><small>Total: ${commande.produits[0].price}$</small></div>
                                                         </div>
                                                     </div>
-                                                <a href="/Pages/Order_detail.html" class="view-btn">View Detail</a >
+                                                <a href="/Pages/Order_detail.html?numero=${commande.numeroCommande}" class="view-btn">Detail</a >
                                                 </div>
    
    

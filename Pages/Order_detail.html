@@ -54,6 +54,7 @@
 
 
     <section class="contact_detail_section">
+        
 
         <div id="toast" class="toast"></div>
         <div id="toast_error" class="toast_error"></div>
@@ -74,14 +75,14 @@
                                     <img src="/Ressources/icones/chevron-right.svg" alt="" srcset="">
                                     <a href="/Pages/Sign_in.html">My Account</a>
                                     <img src="/Ressources/icones/chevron-right.svg" alt="" srcset="">
-                                    <a href="/Pages/Order_detail.html" class="fw-bold">Order_detail</a>
+                                    <a href="/Pages/Order_detail.html" class="fw-bold">Detail commande</a>
                                 
                                 </div>
 
                                 <div class="mt-3">
                                     <div class="new_arrival_top py-2">
                                     <span>.</span>
-                                    <h1 class="">Hello Diene </h1>
+                                    <h1 class="" id="nom_utilisateur">Hello Diene </h1>
                                     </div>
                                     <h5 class="h6 py-2">Welcome to your Account</h5>
                                 </div>
@@ -91,30 +92,34 @@
 
                         <div class="contact_detail_contenu_left_nav">
                             <ul>
-                               <li id="contact_nav_link">
-                                    <a href="/Pages/My_order.html" class="d-flex gap-2">
+                               <li id="contact_nav_link" onclick="window.location.href='/Pages/My_order.html' ">
+                                    <a  class="d-flex gap-2">
                                         <img src="/Ressources/icones/contact_detail_nav1.svg" alt="" srcset="">
-                                        <h4 class="text-dark">My orders</h4>
+                                       
+                                        <div class="d-flex align-items-center justify-content-between  " >
+                                             <h4 class="text-dark">Mes commandes </h4>
+                                             <span class="commande_count_box"></span>
+                                        </div>
                                     </a>
                                 </li>
-                                <li  >
-                                    <a href="/Pages/Wishlist.html" class="d-flex gap-2">
+                                <li  onclick="window.location.href='/Pages/Wishlist.html' ">
+                                    <a  class="d-flex gap-2">
                                         <img src="/Ressources/icones/contact_detail_nav2.svg"  alt="" srcset="">
-                                        <h4 class="text-dark">Wishlist</h4>
+                                        <h4 class="text-dark">Mes Souhaits</h4>
                                     </a>                           
                                 </li>
-                                <li class="">
-                                    <a href="/Pages/Contact_detail.html" class="d-flex gap-2">
+                                <li class=""  onclick="window.location.href='/Pages/Contact_detail.html'">
+                                    <a  class="d-flex gap-2">
                                         <img src="/Ressources/icones/contact_detail_nav3.svg" alt="" srcset="">
-                                        <h4 class="text-dark">My info</h4>
+                                        <h4 class="text-dark">Mes informations</h4>
                                     </a>
                                    
                                   
                                 </li>
-                                <li>
-                                  <a href="/Pages/Page_404.html" class="d-flex gap-2">
+                                <li   >
+                                  <a id="deconnexion" class="d-flex gap-2">
                                     <img src="/Ressources/icones/contact_detail_nav4.svg" alt="" srcset="">
-                                    <h4 class="text-dark">Sign out</h4>
+                                    <h4 class="text-dark">Deconnexion</h4>
                                    </a>
                                 </li>
                             </ul>
@@ -132,14 +137,14 @@
                                         <a href="/Pages/My_order.html" class="text-decoration-none text-dark mb-3 d-inline-block">
                                             <img src="/Ressources/icones/chevron-left.svg" alt="" srcset="">
                                         </a>
-                                        <h1 class="h5 fw-bold">Order Details</h1>
+                                        <h1 class="h5 fw-bold">Detail commande</h1>
                                     </div>
                                    
                                 </div>
 
                              <div class="whislist_contenu_right_box my-3">
 
-                                        <div class="d-flex justify-content-between align-items-center py-5 px-3 bg-light rounded mb-4">
+                                        <!-- <div class="d-flex justify-content-between align-items-center py-5 px-3 bg-light rounded mb-4">
                                             <div>
                                             <strong>Order no:</strong> #123456789<br>
                                             <small>Placed On: 2 June 2023 2:40 PM</small>
@@ -172,10 +177,10 @@
                                         <div class="arrow-box mb-5">
                                             <strong>8 June 2023 3:40 PM</strong>
                                             Your order has been successfully verified.
-                                        </div>
+                                        </div> -->
 
                                    
-                                        <div class="product-box">
+                                        <!-- <div class="product-box">
                                             <img src="/Ressources/images/similar_product_3.png" alt="product">
                                             <div class="product-info">
                                                 <strong>Printed white cote</strong><br>
@@ -199,7 +204,7 @@
                                              <strong>$29.00</strong>
                                             </div>
                                             <div class="ms-3 product-remove">&times;</div>
-                                        </div>
+                                        </div> -->
     
                              </div>
                     </div>
@@ -348,7 +353,11 @@
 
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     
- <script src="/Assets/script.js"></script>
+ <script src="/Assets/script.js" type="module"></script>
+ <script src="/Assets/commande_detail.js" type="module"></script>
+  <script src="/Assets/commandes.js" type="module"></script>
+
 </body>
 </html>

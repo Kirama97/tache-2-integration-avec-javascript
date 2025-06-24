@@ -7,28 +7,29 @@ const email_connecter = localStorage.getItem("utilisateurConnecte");
 const commandesUser = JSON.parse(localStorage.getItem(`commandes_${email_connecter}`)) || [];
 const commande_box = document.querySelector('.commandes_box');
 const commande_count_box = document.querySelector('.commande_count_box');
+const page_commandes = document.querySelector('#page_commandes');
 
 
 
-let count_commande = "";
+
 
 export function affiche_count_commande() {
-
-     count_commande =   commandesUser.length ; 
-
-   return  commande_count_box.innerHTML = count_commande ; 
-    
+    let count_commande = commandesUser.length;
+    if (commande_count_box) {
+        commande_count_box.textContent = count_commande;
+    }
+    return count_commande;
 }
 
-affiche_count_commande()
+affiche_count_commande();
 
+let count_commande_v =  commandesUser.length;
 
+console.log(email_connecter +" "+  count_commande_v) ; 
 
-console.log(email_connecter +" "+  count_commande) ; 
-
- if(count_commande > 0) {
+ if(count_commande_v > 0  && page_commandes ) {
         commandesUser.forEach(commande => {
-        showToast(`Vous avez ${count_commande} commande(s)`)
+        showToast(`Vous avez ${count_commande_v} commande(s)`)
 
 
 
@@ -61,10 +62,19 @@ console.log(email_connecter +" "+  count_commande) ;
             dateFormater,
             dateLivraisonEstimee
         );
-        commande_box.appendChild(commande_container);
+
+        if(commande_box){
+            commande_box.appendChild(commande_container);
+        }
+       
     });
 
  }else {
-    commande_box.innerHTML = `<p class="text-align-center h6">Vous n'avez pas de commande en cours....</p>`
-    showToast_error("Vous n'avez pas de commande ")
+
+    if(commande_box) {
+        commande_box.innerHTML = `<p class="text-align-center h6">Vous n'avez pas de commande en cours....</p>`
+        showToast_error("Vous n'avez pas de commande ")
+    }
+   
+    
  }

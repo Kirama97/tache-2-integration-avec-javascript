@@ -73,3 +73,11 @@ change_btn.forEach((btn) => {
         }
     });
 });
+
+
+
+// fontion pour afficher le nombre de commane 
+
+import {affiche_count_commande} from "./commandes.js"
+
+affiche_count_commande()
