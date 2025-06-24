@@ -23,7 +23,7 @@ if (user && contenue_compte) {
 } else if (contenue_compte) {
     showToast_error("Utilisateur introuvable.");
       setTimeout(() => {
-                window.location.href="/Pages/sign_in.html";
+                  window.location.href = "/Pages/sign_in.html";
             }, 1500);
 }
 
@@ -42,6 +42,12 @@ function verifierTelephone(telephone) {
 }
 
 const change_btn = document.querySelectorAll(".change_btn");
+
+const nom_utilisateur = document.getElementById('nom_utilisateur');
+
+if(nom_utilisateur){
+  nom_utilisateur.innerHTML = `hello ${user.prenom} ${user.nom}`;
+}
 
 change_btn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -74,7 +80,7 @@ change_btn.forEach((btn) => {
         } else {
             showToast_error("Utilisateur introuvable.");
             setTimeout(() => {
-                window.location.href="/Pages/sign_in.html";
+                 window.location.href = "/Pages/sign_in.html";
             }, 1500);
         }
     });
