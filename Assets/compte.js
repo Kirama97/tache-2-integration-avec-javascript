@@ -22,6 +22,9 @@ if (user && contenue_compte) {
     contenue_compte.querySelector('input[name="password"]').value = user.password ;
 } else if (contenue_compte) {
     showToast_error("Utilisateur introuvable.");
+      setTimeout(() => {
+                window.location.href="/Pages/sign_in.html";
+            }, 1500);
 }
 
 function emailValide(email) {
