@@ -47,13 +47,7 @@ const bloc_burguer_left = document.querySelector('.bloc_burguer_left');
  }
 
 
-
-
-
 // ---------------------fetch donnee-----------------------
-
-
-
 
 
 import {categories , w_products} from "../data/data.js" ;
@@ -98,7 +92,6 @@ const afficherWomenProduct = () => {
 
      } )
 
-      
      }
     
    })
@@ -126,14 +119,10 @@ const afficherCategorie = () => {
        if(list_categorie) {
            list_categorie.appendChild(li_categorie);
        }
-      
-
    } )
-
 }
 
 afficherCategorie(categories_data);
-
 
 // si l'utilisateur est connection le rediriger vers la page de son compte sinon sur sign_in
 

@@ -1,35 +1,29 @@
-
 import {showToast_error, showToast} from './product.js';
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
-
-   const payNowBtn = document.querySelector('.shipping_methode_btn .btn');
-   const form = document.querySelector('.checkout_form_contenu_left form');
-   let users = JSON.parse(localStorage.getItem('users')) || [];
-   const email = localStorage.getItem('utilisateurConnecte');
-   const user = users.find(user => user.email === email) ; 
-
-
-
+    const payNowBtn = document.querySelector('.shipping_methode_btn .btn');
+    const form = document.querySelector('.checkout_form_contenu_left form');
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    const email = localStorage.getItem('utilisateurConnecte');
+    const user = users.find(user => user.email === email);
 
     if (!email) {
-                 
-                 showToast_error("Veuillez vous connecter pour continuer.");
-                 alert("Veuillez vous connecter pour continuer.");
-                 window.location.href = "/Pages/Sign_in.html";
-                 return;
-         }
+        showToast_error("Veuillez vous connecter pour continuer.");
+        setTimeout(() => {
+            window.location.href = "/Pages/Sign_in.html";
+        }, 1500);
+        return;
+    }
 
-      
+   
     if (user && form) {
-       form.querySelector('input[placeholder="prenom"]').value = user.prenom  || "";
-       form.querySelector('input[placeholder="nom"]').value = user.nom || "";
-   }
+        form.querySelector('input[placeholder="prenom"]').value = user.prenom  || "";
+        form.querySelector('input[placeholder="nom"]').value = user.nom || "";
+    }
 
+    
     let commandes = JSON.parse(localStorage.getItem('commandes')) || [];
-    const lastCommande = commandes.reverse().find(cmd => cmd.utilisateur === email && cmd.infosLivraison && cmd.infosLivraison.saveInfo);
+    const lastCommande = [...commandes].reverse().find(cmd => cmd.utilisateur === email && cmd.infosLivraison && cmd.infosLivraison.saveInfo);
 
     if (lastCommande && form) {
         const infos = lastCommande.infosLivraison;
@@ -45,105 +39,94 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-
     if(payNowBtn && form) {
-       payNowBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-       
-            // recuperer le panier de l'utilisateur
+        payNowBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+
+           
             let panier = JSON.parse(localStorage.getItem(`panier_${email}`)) || [];
-
-             if(panier.length === 0) {
-                showToast_error("Votre panier est vide ,veuillez ajouter des produits.");
-                // alert("Votre panier est vide , veuillez ajouter des produits.");
-               setTimeout(() => {
-                   window.location.href = "/Pages/Women.html";
-               }, 2000);
+            if(panier.length === 0) {
+                showToast_error("Votre panier est vide, veuillez ajouter des produits.");
+                setTimeout(() => {
+                    window.location.href = "/Pages/Women.html";
+                }, 2000);
                 return;
-             }
-
-
-            // recuperer les informations du formaulaire
-
-            const infos = {
-               pays : form.elements["pays"].value.trim(),
-               Entreprise : form.elements["entreprise"].value.trim(),
-               quartier : form.elements["quartier"].value.trim(),
-               appartement : form.elements["appartement"].value.trim(),
-               ville: form.elements["ville"].value.trim(),
-               codePostal: form.elements["codePostal"].value.trim(),
-               telephone: form.elements["telephone"].value.trim(),
-               saveInfo: form.querySelector('#saveInfo').checked || false 
             }
 
-            // valide les entres
+           
+            const infos = {
+                pays : form.elements["pays"].value.trim(),
+                Entreprise : form.elements["entreprise"].value.trim(),
+                quartier : form.elements["quartier"].value.trim(),
+                appartement : form.elements["appartement"].value.trim(),
+                ville: form.elements["ville"].value.trim(),
+                codePostal: form.elements["codePostal"].value.trim(),
+                telephone: form.elements["telephone"].value.trim(),
+                saveInfo: form.querySelector('#saveInfo').checked || false 
+            };
+
+            
             if (!infos.pays || !infos.quartier || !infos.ville  || !infos.telephone) {
                 showToast_error("Veuillez remplir tous les champs obligatoires.");
-                // alert("Veuillez remplir tous les champs obligatoires.");
                 return;
             }
 
-               if (!/^\+2217[05678]\d{7}$/.test(infos.telephone)) {
-                alert("Veuillez entrer un numéro de téléphone valide au format +2217XXXXXXXX (12 caractères).");
-                showToast_error
-                 return;
-}
+            
+            if (!/^\+2217[05678]\d{7}$/.test(infos.telephone)) {
+                showToast_error("Veuillez entrer un numéro de téléphone valide au format +2217XXXXXXXX.");
+                return;
+            }
 
+           let paiementMethode = "";
+            // const selectedPayment = form.querySelector('input[name="paymentMethod"]:checked');
+            // let paiementMethode = selectedPayment ? selectedPayment.value : "";
+            // if (!paiementMethode) {
+            //     showToast_error("Veuillez choisir une méthode de paiement.");
+            //     return;
+            // }
 
-            // la methode de paiement choisie
+             function genererNumeroCommande() {
+                // Exemple : CMD-20240624-123456
+                const now = new Date();
+                const datePart = `${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}`;
+                const randomPart = Math.floor(100000 + Math.random() * 900000); // 6 chiffres aléatoires
+                return `CMD-${datePart}-${randomPart}`;
+            }
 
-           let paiementMethode = ""
-            //  const selectedPayment = form.querySelector('input[name="paymentMethod"]:checked');
-                               
-            //     let paiementMethode = selectedPayment ? selectedPayment.value : "";
-
-            //     if (!paiementMethode) {
-            //         alert("Veuillez choisir une méthode de paiement.");
-            //         return;
-            //     }
-                            // Créer la commande
-
+            
             const commande = {
-
+                numeroCommande : genererNumeroCommande(),
                 utilisateur: email,
                 infosLivraison: infos,
                 paiementMethode: paiementMethode,
                 produits: panier,
+                nombre_de_produit : panier.length,
                 date: new Date().toISOString()
-            }
+            };
 
-            // Enregistrer la commande dans le localStorage
+         
             let commandes = JSON.parse(localStorage.getItem('commandes')) || [];
             commandes.push(commande);
             localStorage.setItem('commandes', JSON.stringify(commandes));
 
-            // Vider le panier de l'utilisateur
+            // Enregistrer dans le tableau utilisateur
+            let commandesUser = JSON.parse(localStorage.getItem(`commandes_${email}`)) || [];
+            commandesUser.push(commande);
+            localStorage.setItem(`commandes_${email}`, JSON.stringify(commandesUser));
+
+           
             localStorage.removeItem(`panier_${email}`);
 
-            // Message de confirmation
-            // alert("Commande validée avec succès !");
+           
             showToast("Commande validée avec succès !");
-            window.location.href = "/Pages/Confirmed_order.html"; // Crée une page de succès si besoin
-            
-
-
-       })
-    }else{
-         console.error("Le bouton de paiement ou le formulaire n'a pas été trouvé.");
+            setTimeout(() => {
+                window.location.href = "/Pages/Confirmed_order.html";
+            }, 1500);
+        });
+    } else {
+        console.error("Le bouton de paiement ou le formulaire n'a pas été trouvé.");
     }
-
-
-
-})
-
-
-
-
-
-
-
-
-
+});
 
 
 

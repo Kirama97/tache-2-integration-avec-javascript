@@ -312,3 +312,37 @@ export const categorie_item = (categorie) => {
 
 
 }
+
+
+export const commande_item = (commande ,dateFormater,dateLivraisonEstimee) => {
+
+
+   return `
+
+     <div class="order-header">
+                                                    <div>
+                                                        <strong>Commande nu:</strong> ${commande.numeroCommande}<br>
+                                                        <small>Date du Commande: ${dateFormater(commande.date)}</small><br>
+                                                        <small>Livraison estimée: ${dateLivraisonEstimee(commande.date)}</small>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <small><strong>Order Status:</strong> In progress</small><br>
+                                                        <small><strong>Payment Method:</strong>${commande.paiementMethode}</small>
+                                                    </div>
+                                                </div>
+                                                <div class="order-product">
+                                                    <div class="d-flex align-items-center">
+                                                        <img src=${commande.produits[0].image} class="order-img" alt="product">
+                                                        <div class="order-text">
+                                                        <div><strong>${commande.produits[0].title}</strong></div>
+                                                        <div><small> <span class="d-flex align-items-center">Color: <span class="color_item_resume_commande " style="background:${commande.produits[0].color};"></span></span></small></div>
+                                                        <div><small>Qty: ${commande.produits[0].quantity}</small></div>
+                                                        <div><small>Total: ${commande.produits[0].price}$</small></div>
+                                                        </div>
+                                                    </div>
+                                                <a href="/Pages/Order_detail.html" class="view-btn">View Detail</a >
+                                                </div>
+   
+   
+   `
+}

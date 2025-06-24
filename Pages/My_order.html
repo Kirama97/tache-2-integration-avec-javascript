@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/Assets/style.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="/Ressources/images/Logo.png" type="image/x-icon">
-    <title>My order</title>
+    <title>Mes Commandes</title>
 </head>
 <body class="Wishlist_page">
 
@@ -37,9 +37,13 @@
             <a  class="profil_icone" id="cart_icone_link" id="compte">
                 <img src="/Ressources/icones/user-white.svg" alt="" srcset="">
             </a>
-            <a href="/Pages/Cart.html" class="profil_icone" >
+                <a href="/Pages/Cart.html" class="profil_icone position-relative">
                 <img src="/Ressources/icones/panier.svg" alt="" srcset="">
-            </a href="">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                     <p class="compter_panier">0</p>
+                     <span class="visually-hidden">unread messages</span>
+                  </span>
+            </a>
         </div>
 
         <img class="burguer" src="/Ressources/icones/burguer.svg" alt="" srcset="">
@@ -147,87 +151,36 @@
                                     </ul>
 
                                     <div class="tab-content" id="ordersTabContent">
-                                        <div class="tab-pane fade show active" id="active">
+                                        <div class="tab-pane fade show active commandes_box" id="active" >
 
-                                        <!-- Order Card -->
-                                        <div class="order-card">
-                                            <div class="order-header">
-                                                <div>
-                                                    <strong>Order no:</strong> #123456789<br>
-                                                    <small>Order Date: 2 June 2023 2:40 PM</small><br>
-                                                    <small>Estimated Delivery Date: 8 June 2023</small>
-                                                </div>
-                                                <div class="text-end">
-                                                    <small><strong>Order Status:</strong> In progress</small><br>
-                                                    <small><strong>Payment Method:</strong> Cash on delivery</small>
-                                                </div>
-                                            </div>
-                                            <div class="order-product">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="/Ressources/images/similar_product_3.png" class="order-img" alt="product">
-                                                    <div class="order-text">
-                                                    <div><strong>Black Printed T-shirt</strong></div>
-                                                    <div><small>Colour: Pink</small></div>
-                                                    <div><small>Qty: 1</small></div>
-                                                    <div><small>Total: $23.00</small></div>
+                                            <!-- Order Card -->
+                                            <!-- <div class="order-card">
+                                                <div class="order-header">
+                                                    <div>
+                                                        <strong>Order no:</strong> #123456789<br>
+                                                        <small>Order Date: 2 June 2023 2:40 PM</small><br>
+                                                        <small>Estimated Delivery Date: 8 June 2023</small>
+                                                    </div>
+                                                    <div class="text-end">
+                                                        <small><strong>Order Status:</strong> In progress</small><br>
+                                                        <small><strong>Payment Method:</strong> Cash on delivery</small>
                                                     </div>
                                                 </div>
-                                              <a href="/Pages/Order_detail.html" class="view-btn">View Detail</a >
-                                            </div>
-                                        </div>
-
-                                        <!-- Another Order Card -->
-                                        <div class="order-card">
-                                            <div class="order-header">
-                                                <div>
-                                                    <strong>Order no:</strong> #123456789<br>
-                                                    <small>Order Date: 2 June 2023 2:40 PM</small><br>
-                                                    <small>Estimated Delivery Date: 8 June 2023</small>
-                                                </div>
-                                                <div class="text-end">
-                                                    <small><strong>Order Status:</strong> Shipped</small><br>
-                                                    <small><strong>Payment Method:</strong> Cash on delivery</small>
-                                                </div>
-                                            </div>
-                                            <div class="order-product">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="/Ressources/images/similar_product_4.png" class="order-img" alt="product">
-                                                    <div class="order-text">
-                                                    <div><strong>Printed blue & white Cote</strong></div>
-                                                    <div><small>Colour: White</small></div>
-                                                    <div><small>Qty: 1</small></div>
-                                                    <div><small>Total: $143.00</small></div>
+                                                <div class="order-product">
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="/Ressources/images/similar_product_3.png" class="order-img" alt="product">
+                                                        <div class="order-text">
+                                                        <div><strong>Black Printed T-shirt</strong></div>
+                                                        <div><small>Colour: Pink</small></div>
+                                                        <div><small>Qty: 1</small></div>
+                                                        <div><small>Total: $23.00</small></div>
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 <a href="/Pages/Order_detail.html" class="view-btn">View Detail</a >
-                                            </div>
-                                        </div>
+                                                </div>
+                                            </div> -->
 
-                                        <div class="order-card">
-                                            <div class="order-header">
-                                                <div>
-                                                    <strong>Order no:</strong> #123456789<br>
-                                                    <small>Order Date: 2 June 2023 2:40 PM</small><br>
-                                                    <small>Estimated Delivery Date: 8 June 2023</small>
-                                                </div>
-                                                <div class="text-end">
-                                                    <small><strong>Order Status:</strong> In progress</small><br>
-                                                    <small><strong>Payment Method:</strong> Cash on delivery</small>
-                                                </div>
-                                            </div>
-                                            <div class="order-product">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="/Ressources/images/similar_product_5.png" class="order-img" alt="product">
-                                                    <div class="order-text">
-                                                    <div><strong>Blue Shirt</strong></div>
-                                                    <div><small>Colour: Blue</small></div>
-                                                    <div><small>Qty: 1</small></div>
-                                                    <div><small>Total: $93.00</small></div>
-                                                    </div>
-                                                </div>
-                                                <a href="/Pages/Order_detail.html" class="view-btn">View Detail</a >
-                                            </div>
-                                        </div>
+                                        
 
                                         </div>
 
@@ -393,6 +346,7 @@
     
  <script src="/Assets/script.js" type="module"></script>
  <script src="/Assets/deconnexion.js" type="module"></script>
+ <script src="/Assets/commandes.js" type="module"></script>
 
 </body>
 </html>
