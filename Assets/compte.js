@@ -30,8 +30,9 @@ function emailValide(email) {
 }
 
 function verifierTelephone(telephone) {
+    console.log("Numéro reçu :", telephone, "Longueur :", telephone.length);
     if (!/^\+2217[05678]\d{7}$/.test(telephone)) {
-        showToast_error("Veuillez entrer un numéro de téléphone valide (9 chiffres).");
+        showToast_error("Veuillez entrer un numéro de téléphone valide au format +2217XXXXXXXX.");
         return false;
     }
     return true;
@@ -46,7 +47,7 @@ change_btn.forEach((btn) => {
         const prenom = contenue_compte.querySelector('input[name="prenom"]').value.trim();
         const nom = contenue_compte.querySelector('input[name="nom"]').value.trim();
         const email = contenue_compte.querySelector('input[name="email"]').value.trim();
-        const telephone = contenue_compte.querySelector('input[name="telephone"]').value.trim();
+        const telephone = contenue_compte.querySelector('input[name="telephone"]').value;
         const password = contenue_compte.querySelector('input[name="password"]').value.trim();
 
         if (telephone && !verifierTelephone(telephone)) {

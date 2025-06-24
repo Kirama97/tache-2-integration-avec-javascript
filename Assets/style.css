@@ -3731,6 +3731,9 @@ height: 100%;
 
 
 
+.confirmed_order_page .container img {
+    cursor: pointer;
+}
 
 
 /* -----------------------contact detail page -------------------*/
@@ -3801,9 +3804,13 @@ height: 100%;
 }
 
 .contact_detail_contenu_left_nav ul li:hover {
-       border-left: 2px solid var(--color-p);
+      
     background-color: var(--bg-icone);
+    /* background-color: var(--color-primaire); */
+    
 }
+
+
 
 
 
