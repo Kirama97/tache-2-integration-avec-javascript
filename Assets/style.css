@@ -4117,6 +4117,16 @@ list-style: none;
      /* -----------------------my order -page ----------------------- */
 
 
+     .commande_count_box {
+        font-size: 13px;
+        background-color: var(--color-indigo);
+        padding: 2px 10px;
+        border-radius: 10px;
+        color: white;
+        margin-left: 40px;
+        
+     }
+
       .nav-tabs {
         width: 100%;
         justify-content: space-between;

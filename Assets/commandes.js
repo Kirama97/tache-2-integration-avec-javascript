@@ -6,15 +6,29 @@ import {commande_item} from './template.js';
 const email_connecter = localStorage.getItem("utilisateurConnecte");
 const commandesUser = JSON.parse(localStorage.getItem(`commandes_${email_connecter}`)) || [];
 const commande_box = document.querySelector('.commandes_box');
+const commande_count_box = document.querySelector('.commande_count_box');
 
 
-let count_comande = commandesUser.length
 
-console.log(email_connecter +" "+  count_comande) ; 
+let count_commande = "";
 
- if(count_comande > 0) {
+export function affiche_count_commande() {
+
+     count_commande =   commandesUser.length ; 
+
+   return  commande_count_box.innerHTML = count_commande ; 
+    
+}
+
+affiche_count_commande()
+
+
+
+console.log(email_connecter +" "+  count_commande) ; 
+
+ if(count_commande > 0) {
         commandesUser.forEach(commande => {
-        showToast(`Vous avez ${count_comande} commande(s)`)
+        showToast(`Vous avez ${count_commande} commande(s)`)
 
 
 
