@@ -895,6 +895,79 @@
         filtrer_produit(w_product_filtrer)  ;
 
 
+
+
+
+         
+  /* let currentSlide = 0;
+   const totalCards = 12;
+   const visibleCards = 4;
+   const maxSlide = totalCards - visibleCards;
+
+   function slide(direction) {
+   currentSlide += direction;
+   if (currentSlide < 0) currentSlide = 0;
+   if (currentSlide > maxSlide) currentSlide = maxSlide;
+
+   const sliderTrack = document.getElementById('sliderTrack');
+   const slideWidth = sliderTrack.offsetWidth / visibleCards;
+   sliderTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+   }
+
+*/
+
+let currentIndex = 0;
+const sliderTrack = document.getElementById('sliderTrack');
+const cards = sliderTrack ? sliderTrack.querySelectorAll('.slider-card') : [];
+const cardsToShow = 4; 
+
+function updateSlider() {
+    if (!sliderTrack) return;
+    const cardWidth = cards[0].offsetWidth;
+    sliderTrack.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+// Boutons
+window.slide = function(direction) {
+    if (!sliderTrack) return;
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > cards.length - cardsToShow) currentIndex = cards.length - cardsToShow;
+    updateSlider();
+};
+
+// Touch events pour mobile
+let startX = 0;
+let isDragging = false;
+
+if (sliderTrack) {
+    sliderTrack.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+    });
+
+    sliderTrack.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        let diff = e.touches[0].clientX - startX;
+        
+    });
+
+    sliderTrack.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        let endX = e.changedTouches[0].clientX;
+        let diff = endX - startX;
+        if (Math.abs(diff) > 50) { // Seuil pour déclencher le slide
+            if (diff < 0) window.slide(1); // Glisse à gauche → slide à droite
+            else window.slide(-1);         // Glisse à droite → slide à gauche
+        }
+        isDragging = false;
+    });
+}
+
+// Initialisation
+updateSlider();
+
+
  </script>
 </body>
 </html>

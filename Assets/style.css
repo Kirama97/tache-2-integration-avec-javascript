@@ -470,6 +470,22 @@ section {
     
 }
 
+/* 
+
+.slider-container {
+    overflow: hidden;
+    position: relative;
+}
+.slider-track {
+    display: flex;
+    transition: transform 0.4s;
+    will-change: transform;
+}
+.slider-card {
+    min-width: 250px;
+    flex: 0 0 auto;
+} */
+
 
 
 .slider-container {
