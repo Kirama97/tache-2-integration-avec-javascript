@@ -23,7 +23,7 @@ if (user && contenue_compte) {
 } else if (contenue_compte) {
     showToast_error("Utilisateur introuvable.");
       setTimeout(() => {
-                  window.location.href = "/Pages/sign_in.html";
+                  window.location.href = "/Pages/Sign_in.html";
             }, 1500);
 }
 
@@ -80,7 +80,7 @@ change_btn.forEach((btn) => {
         } else {
             showToast_error("Utilisateur introuvable.");
             setTimeout(() => {
-                 window.location.href = "/Pages/sign_in.html";
+                 window.location.href = "/Pages/Sign_in.html";
             }, 1500);
         }
     });
