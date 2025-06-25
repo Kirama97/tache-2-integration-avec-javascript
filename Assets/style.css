@@ -76,9 +76,14 @@ p {
 header {
     font-family: "Urbanist", sans-serif; 
     background-color: white;
-    height: 8vh;
+    height: 9vh;
     padding: 5px 5% ;
-   
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    
 }
 
 .go_home {
@@ -196,19 +201,20 @@ header .profil .profil_icone:hover img {
 
 
 .hero {
-    height: 92vh;
+    height: 91vh;
     width: 100%;
+    margin-top: 9vh;
     /* font-family: "Urbanist", sans-serif; */
     font-family: "Core Sans c", sans-serif;
 }
 
 .carousel-item:nth-child(1) .post1 {
-    background: url(/Ressources/images/hero_bg.jpg);
+    background: url(/Ressources/images/kira.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 .carousel-item:nth-child(2) .post1 {
-    background: url(/Ressources/images/hero_bg2.png);
+    background: url(/Ressources/images/hero_tof1.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
